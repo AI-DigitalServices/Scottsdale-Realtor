@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Mom-Centered Real Estate Guidance — Warm, Supportive & Community Led</title>
+<meta name="description" content="A nurturing real estate experience built for moms. Join our supportive community, get clarity for your next move, and download your free Mom-Focused Home Buyer Guide.">
+
+<!-- SOCIAL -->
+<meta property="og:title" content="Mom-Centered Real Estate Guidance" />
+<meta property="og:description" content="Warm support + real guidance for moms navigating real estate. Download the free Mom-Focused Home Buyer Guide." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200" />
+<meta property="og:type" content="website" />
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --blush: #E8CFC7;
+        --sand: #F4ECE7;
+        --clay: #D8A48F;
+        --milk: #FFFDFC;
+        --charcoal: #363636;
+        --brown: #8B5E46;
+        --warm-white: #FAF8F6;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--milk);
+        color: var(--charcoal);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    /* SMOOTH SCROLL */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(135deg, rgba(216, 164, 143, 0.85), rgba(139, 94, 70, 0.75)), 
+                    url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80') center/cover no-repeat;
+        padding: 160px 30px 140px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+        background-size: 40px 40px;
+        animation: gentleFloat 30s linear infinite;
+    }
+
+    @keyframes gentleFloat {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        100% { transform: translate(30px, 30px) rotate(360deg); }
+    }
+
+    .hero-content {
+        position: relative;
+        max-width: 880px;
+        margin: auto;
+        z-index: 2;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: fadeInDown 0.8s ease;
+    }
+
+    .hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        line-height: 1.2;
+        animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+        line-height: 1.6;
+        font-weight: 300;
+        animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .btn {
+        background: var(--clay);
+        color: white;
+        padding: 18px 40px;
+        border-radius: 12px;
+        display: inline-block;
+        margin-top: 35px;
+        font-size: 1.15rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 25px rgba(216, 164, 143, 0.35);
+        border: none;
+        cursor: pointer;
+        animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .btn:hover {
+        background: var(--brown);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(139, 94, 70, 0.4);
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+        background: var(--warm-white);
+        padding: 35px 30px;
+        text-align: center;
+        border-bottom: 1px solid #efe8e3;
+    }
+
+    .trust-stats {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .stat {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--clay);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
+        color: var(--brown);
+        font-weight: 500;
+    }
+
+    /* SECTION */
+    section {
+        padding: 90px 30px;
+        max-width: 920px;
+        margin: auto;
+    }
+
+    section h2 {
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        font-weight: 700;
+        color: var(--charcoal);
+    }
+
+    section p {
+        max-width: 750px;
+        margin: 0 auto 25px auto;
+        font-size: 1.15rem;
+        text-align: center;
+        color: #555;
+    }
+
+    .highlight-text {
+        color: var(--brown);
+        font-weight: 600;
+    }
+
+    /* FEATURES GRID */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 35px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        transition: all 0.3s ease;
+        border-left: 4px solid var(--blush);
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        border-left-color: var(--clay);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        color: var(--brown);
+        font-weight: 600;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #666;
+        text-align: left;
+        margin: 0;
+    }
+
+    /* FREE GUIDE SECTION */
+    .guide-section {
+        background: linear-gradient(135deg, var(--sand) 0%, var(--blush) 100%);
+        padding: 100px 30px;
+    }
+
+    .guide-container {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .form-box {
+        background: white;
+        padding: 45px;
+        border-radius: 20px;
+        margin-top: 45px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    }
+
+    .form-box h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+        text-align: center;
+        color: var(--brown);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-box input,
+    .form-box textarea {
+        width: 100%;
+        padding: 16px;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: 2px solid #e8e8e8;
+        font-family: 'Inter', sans-serif;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-box input:focus,
+    .form-box textarea:focus {
+        outline: none;
+        border-color: var(--clay);
+    }
+
+    .form-box .btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .privacy-note {
+        font-size: 0.85rem;
+        color: #888;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+        background: var(--warm-white);
+    }
+
+    .testimonial {
+        background: white;
+        border-radius: 16px;
+        padding: 35px;
+        margin-top: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        border-left: 5px solid var(--clay);
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover {
+        transform: translateX(5px);
+    }
+
+    .testimonial-text {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #555;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--blush);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--brown);
+    }
+
+    .author-info strong {
+        display: block;
+        font-weight: 600;
+        color: var(--brown);
+        font-size: 1.05rem;
+    }
+
+    .author-info span {
+        font-size: 0.9rem;
+        color: #888;
+    }
+
+    /* FOOTER CTA */
+    .footer-cta {
+        background: linear-gradient(135deg, var(--clay) 0%, var(--brown) 100%);
+        padding: 90px 30px;
+        text-align: center;
+        color: white;
+    }
+
+    .footer-cta h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .footer-cta p {
+        font-size: 1.2rem;
+        margin-bottom: 35px;
+        opacity: 0.95;
+    }
+
+    .footer-cta .btn {
+        background: white;
+        color: var(--brown);
+    }
+
+    .footer-cta .btn:hover {
+        background: var(--warm-white);
+        transform: translateY(-3px);
+    }
+
+    /* FOOTER */
+    footer {
+        background: var(--charcoal);
+        color: rgba(255,255,255,0.8);
+        padding: 50px 30px;
+        text-align: center;
+    }
+
+    footer p {
+        margin: 10px 0;
+        font-size: 0.95rem;
+    }
+
+    .footer-heart {
+        color: var(--blush);
+    }
+
+    /* SCROLL INDICATOR */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        z-index: 3;
+    }
+
+    .scroll-indicator span {
+        display: block;
+        width: 30px;
+        height: 50px;
+        border: 2px solid rgba(255,255,255,0.5);
+        border-radius: 25px;
+        position: relative;
+    }
+
+    .scroll-indicator span::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: white;
+        animation: scrollDot 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+        40% { transform: translateX(-50%) translateY(-10px); }
+        60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    @keyframes scrollDot {
+        0% { opacity: 1; top: 10px; }
+        100% { opacity: 0; top: 30px; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .hero h1 { 
+            font-size: 2.2rem; 
+        }
+        .hero p { 
+            font-size: 1.1rem; 
+        }
+        .trust-stats {
+            gap: 40px;
+        }
+        section h2 {
+            font-size: 2rem;
+        }
+        .form-box {
+            padding: 30px 25px;
+        }
+        .footer-cta h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">✨ Your Safe Space for Real Estate Guidance</div>
+        <h1>Where Moms Feel Seen, Supported, and Guided Through Real Estate</h1>
+        <p>A warm, community-led space helping moms make confident housing decisions — without overwhelm, pressure, or confusion.</p>
+        <a href="#guide" class="btn">Get Your Free Mom-Focused Home Buyer Guide</a>
+    </div>
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
+</header>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-stats">
+        <div class="stat">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Moms Supported</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">5★</span>
+            <span class="stat-label">Average Rating</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Judgment-Free</span>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 1 -->
+<section>
+    <h2>A Real Estate Space Built Around Moms</h2>
+    <p>We know that choosing a home as a mom is about <span class="highlight-text">so much more than square footage</span>. It's about safety, comfort, routines, schools, community, and the tiny moments that make a house feel like home.</p>
+    <p>This space was created to help moms move with clarity — <span class="highlight-text">supported, informed, and not alone</span>.</p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <span class="feature-icon">🤗</span>
+            <h3>Warm, Judgment-Free Support</h3>
+            <p>No pressure tactics. No confusing jargon. Just genuine care and understanding for your unique family journey.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🏡</span>
+            <h3>Tailored to Real Mom Life</h3>
+            <p>Guidance that considers school districts, playgrounds, safety, and all the details that matter to your family.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">📚</span>
+            <h3>Clarity Without Overwhelm</h3>
+            <p>Simple, actionable resources that break down the complex parts of home buying into manageable steps.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">💝</span>
+            <h3>Community-Centered</h3>
+            <p>Join a supportive network of moms who understand what you're going through and cheer you on.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FREE GUIDE -->
+<section class="guide-section" id="guide">
+    <div class="guide-container">
+        <h2>Your Free "Mom-Focused Home Buyer Guide"</h2>
+        <p>A gentle, easy-to-read guide that helps moms understand what to look for, what to avoid, and how to choose a home that truly fits your family.</p>
+
+        <div class="form-box">
+            <h3>📖 Download Your Free Guide</h3>
+            <form id="guideForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number (Optional)">
+                </div>
+                <button type="submit" class="btn">Send Me the Guide Now</button>
+                <p class="privacy-note">🔒 Your information is safe with us. No spam, ever.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- WHY THIS MATTERS -->
+<section>
+    <h2>Why This Matters</h2>
+    <p>Moms deserve more than pressure-based real estate advice.</p>
+    <p>You deserve <span class="highlight-text">care, understanding, practical resources</span>, and support built around the real rhythm of your life.</p>
+    <p>Here, you'll find community, clarity, and a safe space to figure out your next step — at your own pace, on your own terms.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+    <h2>What Other Moms Say</h2>
+
+    <div class="testimonial">
+        <p class="testimonial-text">"I finally felt like someone understood what I needed as a mom. No pressure. No confusion. Just support. This guide gave me the confidence I didn't know I was missing."</p>
+        <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div class="author-info">
+                <strong>Sarah M.</strong>
+                <span>Mother of 3, First-Time Buyer</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <p class="testimonial-text">"This guide made everything feel simpler. I didn't know real estate could feel this warm. The checklist for school districts alone was worth it!"</p>
+        <div class="testimonial-author">
+            <div class="author-avatar">AL</div>
+            <div class="author-info">
+                <strong>Amanda L.</strong>
+                <span>Mom of 2, Recently Relocated</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <p class="testimonial-text">"Finally, someone who gets it. The practical tips about safety features and kid-friendly neighborhoods were exactly what I needed. Thank you!"</p>
+        <div class="testimonial-author">
+            <div class="author-avatar">JK</div>
+            <div class="author-info">
+                <strong>Jennifer K.</strong>
+                <span>Single Mom, Home Buyer</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+    <h2>Join the Community That Puts Moms First</h2>
+    <p>Download your free guide and start your journey with confidence, clarity, and support.</p>
+    <a href="#guide" class="btn">Get Your Free Guide Now</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Made with <span class="footer-heart">♥</span> for moms, by someone who understands.</p>
+    <p>&copy; 2024 Mom-Centered Real Estate. All rights reserved.</p>
+    <p style="margin-top: 20px; opacity: 0.6;">Licensed Real Estate Professional | Community-Focused Service</p>
+</footer>
+
+<script>
+    // Form Submission Handler
+    document.getElementById('guideForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value
+        };
+        
+        // Log form data (replace with your email service integration)
+        console.log('Guide Download Request:', formData);
+        
+        // Success message
+        alert(`🎉 Thank you, ${formData.name}! Your Mom-Focused Home Buyer Guide is on its way to ${formData.email}. Check your inbox (and spam folder) in the next few minutes. Welcome to our community! 💝`);
+        
+        // Reset form
+        this.reset();
+        
+        // Scroll to top smoothly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Add fade-in animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections and cards
+    document.querySelectorAll('section, .feature-card, .testimonial').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
