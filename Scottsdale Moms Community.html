@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Scottsdale Moms Community — Connection, Not Isolation</title>
+    <meta name="description" content="A warm, welcoming community for Scottsdale moms to connect, slow down, and build meaningful friendships. Free local meetups, playdates, and real community.">
+    
+    <!-- Social Meta -->
+    <meta property="og:title" content="Scottsdale Moms Community — Connection, Not Isolation" />
+    <meta property="og:description" content="A place for moms to connect, slow down, and build real community — right here in Scottsdale." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --blush: #F8E9E9;
+            --sage: #D1E0D7;
+            --warm-sand: #F5F1EB;
+            --dusty-rose: #B76E79;
+            --soft-clay: #E8C4C4;
+            --warm-gray: #8C8C8C;
+            --deep-rose: #9C5D6A;
+            --cream: #FFFDFC;
+            --white: #ffffff;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-soft: 0 4px 20px rgba(183, 110, 121, 0.1);
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: #5D5D5D;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--deep-rose);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* === HERO === */
+        .hero {
+            background: linear-gradient(rgba(183, 110, 121, 0.15) 0%, rgba(209, 224, 215, 0.15) 100%),
+                        url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 80px 24px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 253, 252, 0.92);
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .community-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blush);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            color: var(--deep-rose);
+            border: 1px solid var(--soft-clay);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            color: var(--deep-rose);
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+            color: var(--warm-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        /* === BUTTONS === */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 36px;
+            border-radius: var(--radius);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: var(--dusty-rose);
+            color: var(--white);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .btn-primary:hover {
+            background: var(--deep-rose);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(183, 110, 121, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--dusty-rose);
+            border: 2px solid var(--soft-clay);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--blush);
+            border-color: var(--dusty-rose);
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        /* === SECTIONS === */
+        .section {
+            padding: clamp(80px, 10vw, 100px) 24px;
+            scroll-margin-top: 80px;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--dusty-rose);
+        }
+        
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--warm-gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 40px auto 60px;
+            line-height: 1.7;
+        }
+        
+        /* === INTRO SECTION === */
+        .intro-section {
+            background: var(--warm-sand);
+        }
+        
+        .intro-content {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 60px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--blush);
+            position: relative;
+        }
+        
+        .intro-content::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--soft-clay);
+            border-radius: var(--radius);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .heart-icon {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--dusty-rose);
+        }
+        
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #5D5D5D;
+            margin-bottom: 25px;
+        }
+        
+        .intro-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* === COMMUNITY FEATURES === */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1100px;
+            margin: 60px auto 0;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--blush);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--dusty-rose), var(--sage));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(183, 110, 121, 0.1);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--blush);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 24px;
+            color: var(--deep-rose);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        
+        .feature-card p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+        
+        /* === IMAGE GALLERY SECTION === */
+        .gallery-section {
+            background: linear-gradient(var(--warm-sand), var(--cream));
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+        
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 300px;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        
+        /* === FOR/NOT FOR SECTION === */
+        .comparison-section {
+            background: var(--warm-sand);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+        
+        .comparison-column {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--blush);
+        }
+        
+        .comparison-title {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .for-list, .not-list {
+            list-style: none;
+        }
+        
+        .for-list li, .not-list li {
+            padding: 12px 0;
+            padding-left: 36px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .for-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 24px;
+            height: 24px;
+            background: rgba(209, 224, 215, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .not-list li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: var(--soft-clay);
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 24px;
+            height: 24px;
+            background: rgba(232, 196, 196, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* === CTA SECTION === */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--sage) 100%);
+            color: var(--deep-rose);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 20px;
+            color: var(--deep-rose);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            color: var(--warm-gray);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* === FOOTER === */
+        .footer {
+            background: var(--deep-rose);
+            color: var(--white);
+            padding: 60px 24px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-brand {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .footer-host {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin: 30px 0;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .footer-community-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin: 40px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .footer-copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 70vh;
+                padding: 60px 20px;
+            }
+            
+            .hero-content {
+                padding: 40px 28px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .intro-content {
+                padding: 40px 28px;
+            }
+            
+            .features-grid, .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section {
+                padding: 60px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .intro-content {
+                padding: 32px 20px;
+            }
+            
+            .comparison-column {
+                padding: 30px 20px;
+            }
+            
+            .footer-host {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- === HERO === -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="community-badge">
+                🤍 A Community by Scottsdale Moms, For Scottsdale Moms
+            </div>
+            <h1>Scottsdale Moms Community</h1>
+            <p class="hero-subtitle">
+                A place for moms to connect, slow down, and build real community — right here in Scottsdale.
+            </p>
+            <div class="hero-cta">
+                <a href="#join" class="btn btn-primary">
+                    ✨ Join the Community
+                </a>
+                <a href="#events" class="btn btn-secondary">
+                    📅 See Upcoming Events
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- === INTRO SECTION === -->
+    <section class="section intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="heart-icon">🤍</div>
+                <h2 style="text-align: center; margin-bottom: 30px; color: var(--deep-rose);">
+                    This Space Was Created for Connection
+                </h2>
+                
+                <p class="intro-text">
+                    This space was created for moms who want more connection and less isolation.
+                </p>
+                
+                <p class="intro-text">
+                    Motherhood can feel busy and full — and sometimes lonely. My hope is to create a warm, welcoming community where moms can gather, connect, and enjoy simple moments together.
+                </p>
+                
+                <p class="intro-text">
+                    This is not about perfection or pressure. It's about showing up, doing life together, and building meaningful friendships that last beyond the playdates.
+                </p>
+                
+                <p class="intro-text" style="font-style: italic; color: var(--dusty-rose); text-align: center; margin-top: 30px;">
+                    Because motherhood is better when we're not doing it alone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- === COMMUNITY FEATURES === -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="section-title">What This Community Includes</h2>
+            <p class="section-subtitle">
+                Real connection through simple, meaningful gatherings
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Free Local Meetups</h3>
+                    <p>Regular gatherings at parks, libraries, and local spots that won't break the bank. Always free or low-cost.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👶</div>
+                    <h3>Toddler-Friendly Activities</h3>
+                    <p>Playdates and activities designed with little ones in mind. Messy play welcome!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Library Days & Park Meetups</h3>
+                    <p>Weekly library story times and park playdates for sunshine and socialization.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Monthly Moms Night Out</h3>
+                    <p>A chance to connect without little ones — because moms need friendship too.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Shared Local Resources</h3>
+                    <p>Trusted recommendations for everything from pediatricians to the best playgrounds.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Real Conversations</h3>
+                    <p>A space to share the real stuff — the joys, challenges, and everything in between.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === GALLERY SECTION === -->
+    <section class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">Community Moments</h2>
+            <p class="section-subtitle">
+                Real connections happening right here in Scottsdale
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Moms and kids at park playdate">
+                    <div class="gallery-caption">Park Playdates at McCormick-Stillman</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Moms coffee gathering">
+                    <div class="gallery-caption">Coffee & Conversation Mornings</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Library story time">
+                    <div class="gallery-caption">Library Story Time Gatherings</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Moms night out">
+                    <div class="gallery-caption">Monthly Moms Night Out</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOR / NOT FOR === -->
+    <section class="section comparison-section">
+        <div class="container">
+            <h2 class="section-title">Who This Is For</h2>
+            <p class="section-subtitle">
+                (And what it's definitely not)
+            </p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-column">
+                    <h3 class="comparison-title">✅ This Is For</h3>
+                    <ul class="for-list">
+                        <li>Moms living in or near Scottsdale</li>
+                        <li>Moms with little ones (and moms-to-be welcome!)</li>
+                        <li>Moms who value community, connection, and presence</li>
+                        <li>Moms looking for real-life relationships</li>
+                        <li>Moms who believe in supporting each other</li>
+                        <li>Moms who want to build local friendships</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-column">
+                    <h3 class="comparison-title">❌ This Is NOT</h3>
+                    <ul class="not-list">
+                        <li>Not a sales page or business pitch</li>
+                        <li>Not a networking group or MLM space</li>
+                        <li>Not about perfection or competition</li>
+                        <li>Not another online-only community</li>
+                        <li>Not a place for judgment or pressure</li>
+                        <li>Just community 🤍</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === CTA === -->
+    <section id="join" class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Scottsdale Moms Community</h2>
+                <p>
+                    Whether you're new to town or just looking for more local mom friends, we'd love to have you. 
+                    Join us for our next gathering or connect online to stay updated on events.
+                </p>
+                <div class="cta-buttons">
+                    <button onclick="joinCommunity()" class="btn btn-primary">
+                        ✨ Get Updates on Events & Meetups
+                    </button>
+                    <div style="display: flex; gap: 15px; justify-content: center; width: 100%; margin-top: 20px;">
+                        <button onclick="joinFacebookGroup()" class="btn btn-secondary">
+                            📘 Join Facebook Group
+                        </button>
+                        <button onclick="followInstagram()" class="btn btn-secondary">
+                            📷 Follow on Instagram
+                        </button>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                    All events are free or low-cost. No membership fees. Just community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">Scottsdale Moms Community</div>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9; line-height: 1.6;">
+                A warm, welcoming space for Scottsdale moms to connect, support each other, and build meaningful friendships.
+            </p>
+            
+            <div class="footer-host">
+                <span style="font-weight: 600;">Hosted by Allie</span>
+                <span style="opacity: 0.9;">•</span>
+                <span>Scottsdale local • Mom • Community builder</span>
+            </div>
+            
+            <div class="footer-community-badge">
+                <p><strong>Community Disclaimer:</strong> This is a non-commercial community space. No sales, no business pitches, no real estate services. Just connection, support, and shared experiences among Scottsdale moms.</p>
+            </div>
+            
+            <div class="footer-copyright">
+                © 2026 Scottsdale Moms Community | Created with 🤍 for Scottsdale moms<br>
+                All gatherings held in public spaces across Scottsdale
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Join Community function
+        function joinCommunity() {
+            const email = prompt("What's your email address? I'll send you our community newsletter with event updates and meetup information:");
+            if(email && email.includes('@')) {
+                alert(`Welcome to the community! I've added ${email} to our Scottsdale Moms newsletter.\n\nYou'll receive our monthly event calendar and community updates. Check your inbox (and spam folder) for our welcome email!`);
+                // In production: integrate with email service
+            } else if(email) {
+                alert("Please enter a valid email address to receive community updates.");
+                joinCommunity(); // Retry
+            }
+        }
+        
+        // Join Facebook Group function
+        function joinFacebookGroup() {
+            const confirmed = confirm("You'll be redirected to our private Facebook group.\n\nPlease answer the membership questions to join our Scottsdale Moms community!");
+            if(confirmed) {
+                // In production: window.open('https://facebook.com/groups/scottsdale-moms-community', '_blank');
+                alert("Redirecting to our private Facebook group... (In production, this would open the actual group link)");
+            }
+        }
+        
+        // Follow Instagram function
+        function followInstagram() {
+            const confirmed = confirm("Follow @ScottsdaleMomsCommunity on Instagram for daily community updates, event reminders, and real mom moments!");
+            if(confirmed) {
+                // In production: window.open('https://instagram.com/scottsdale_moms_community', '_blank');
+                alert("Redirecting to Instagram... (In production, this would open the actual Instagram profile)");
+            }
+        }
+        
+        // Gallery image hover effect enhancement
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Fade-in animation for feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for scroll animations
+        document.querySelectorAll('.feature-card, .comparison-column, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        console.log('Scottsdale Moms Community page loaded successfully');
+    </script>
+</body>
+</html>
